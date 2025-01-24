@@ -34,7 +34,16 @@
       }
     ]
     // Write your code here
-
+      function vegMenu(menu){
+        const getMenu = document.querySelector('#menu');
+        const vegOptions = menu.filter((item) => item.isVegetarian===true);
+        vegOptions.forEach((item) => {
+          const dish = document.createElement("li");
+          dish.textContent = item.name;
+          getMenu.appendChild(dish);
+        })
+      }
+      vegMenu(menu);
   </script>
 </body>
 
