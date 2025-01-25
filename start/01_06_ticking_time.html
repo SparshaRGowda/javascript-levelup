@@ -13,10 +13,18 @@
 
   <!-- Use this element to render your clock -->
   <div id="clock"></div>
-
+    
   <script>
     // Write your code here
-    
+    function timer(){
+      const clock = document.querySelector('#clock');
+      return setInterval(()=> {
+        const date = new Date();
+        const time = date.toLocaleTimeString();
+        clock.textContent = time;
+      }, 1000);
+    }
+    timer();
   </script>
 </body>
 
