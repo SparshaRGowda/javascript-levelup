@@ -18,7 +18,17 @@
 
   <script>
     // Write your code here
-
+    const blueButton = document.querySelector('#blue');
+    const pinkButton = document.querySelector('#pink');
+    const greenButton = document.querySelector('#green');
+    const changeColor = function(color){
+      return function(){
+      document.bgColor = color;
+      }
+    }
+    blueButton.addEventListener('click', changeColor(blueButton.id))
+    pinkButton.addEventListener('click', changeColor(pinkButton.id))
+    greenButton.addEventListener('click', changeColor(greenButton.id))
   </script>
 </body>
 
