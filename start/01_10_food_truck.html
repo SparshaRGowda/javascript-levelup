@@ -16,7 +16,18 @@
 
   <script>
     // Write your code here
-
+    const parentEl = document.querySelector('#combined-menu');
+    function foodTruck(menus){
+      const foodMenu = menus.flat();
+      let uniqueMenu = new Set(foodMenu);
+      console.log(uniqueMenu);
+      [...uniqueMenu].map((item) => {
+        let eachItem = document.createElement('li');
+        eachItem.innerHTML = item;
+        parentEl.appendChild(eachItem);
+      })
+    }
+    foodTruck([['pizza','taco'],['burger', 'taco']]);
   </script>
 </body>
 
