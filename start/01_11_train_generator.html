@@ -16,7 +16,27 @@
 
   <script>
     // Write your code here
-
+    function* nextStop(){
+      yield 'Poughkeepsie';
+      yield 'Newburgh';
+      yield 'Peekskill';
+      yield 'Yonkers';
+      yield 'Bronx';
+      yield 'Grand Central';
+    }
+    const nycTrain = nextStop();
+    const nextButton = document.querySelector('#next-stop');
+    nextButton.addEventListener('click', () => {
+      let say = document.createElement('p');
+      let currStop = nycTrain.next();
+      if(currStop.done){
+        say.textContent = 'We made it';
+        nextButton.setAttribute('disabled', true);
+      }else{
+        say.textContent = currStop.value;
+      }
+      document.body.appendChild(say);
+    });
   </script>
 </body>
 
